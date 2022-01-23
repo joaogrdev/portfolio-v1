@@ -1,0 +1,8 @@
+cor1: #C28642 ; bronze
+cor2: #DE9F57 ; amarelo terra
+cor3: #F0D9BD ; bisque
+
+
+fonte-cabecalho:
+fonte-destaque:
+fonte-padrão:
