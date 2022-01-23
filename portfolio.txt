@@ -1,0 +1,16 @@
+cor1: #F7F2EB ; floral white
+cor2: #00a2e8 ; azul
+cor3: #3ab9f0 ; azul-claro
+cor4: #DE5B23 ; laranja
+cor5: #ED9068 ; salmao
+
+
+fonte-destaque: Josefin Sans
+fonte-padrão: 
+
+
+img fundo quem sou
+https://unsplash.com/photos/oykbZuvajO0
+
+img fundo conhecimentos
+https://unsplash.com/photos/BFxnx0UHVGM
