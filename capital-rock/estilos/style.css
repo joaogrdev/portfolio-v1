@@ -35,6 +35,7 @@ a {
 
 body {
     height: 100vh;
+    background-color: var(--cor1);
 }
 
 header {
@@ -93,16 +94,27 @@ main {
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
+
+    animation: fundo-pulando 30s ease-out 0s infinite alternate none;
 }
 
+@keyframes fundo-pulando {
+    0% {
+      background-position: 50% 50%;
+    }
+  
+    100% {
+      background-position: 50% 80%;
+    }
+  }
+
 main > div#fundo-conteudo {
-    background-color: rgba(20, 20, 20, 0.63);
+    backdrop-filter: blur(10px) saturate(200%);
+    background-color: rgba(0, 0, 0, 0.8);
     height: 100%;
     width: 40%;
     min-width: 350px;
     display: flex;
-    position: relative;
-    background-blend-mode: darken;
 }
 
 div#fundo-conteudo > div#container-conteudo {
@@ -116,7 +128,6 @@ div#container-conteudo > h2 {
     font-family: var(--fonte-padrao);
     font-size: 1.4em;
     font-weight: normal;
-    text-align: right;
 }
 
 div#container-conteudo > h2#chamativo {
@@ -277,8 +288,20 @@ div.container > label {
     position: absolute;
     top: 0;
     width: 100%;
-    opacity: 0;
+    opacity: 100;
     cursor: pointer;
+    background-image: url(../imagens/746310_check_business_internet_mark_ok_icon.png);
+    background-size: 80%;   
+    background-repeat: no-repeat; 
+    background-position: center center;
+}
+
+.container__input:hover {
+    opacity: 100;
+}
+
+.container__input::-webkit-file-upload-button {
+   opacity: 0; 
 }
 
 div#container-form > button {
