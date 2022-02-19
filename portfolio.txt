@@ -1,9 +1,11 @@
 cor1: #F7F2EB ; floral white
 cor2: #00a2e8 ; azul
 cor3: #3ab9f0 ; azul-claro
-cor4: #DE5B23 ; laranja
+cor4: ##C25F34 ; laranja
 cor5: #ED9068 ; salmao
 
+F0D5AF - wheat
+F0BB71 - sunray
 
 fonte-destaque: Josefin Sans
 fonte-padrão: 

@@ -5,33 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>João Gabriel Ribeiro</title>
-    <link rel="shortcut icon" href="imagens/logo/logo-gradiente-semfundo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="imagens/logo/logo-laranja-amarelo.png" type="image/x-icon">
     <link rel="stylesheet" href="estilo/style.css">
 
 </head>
 <body>
     <header>
-        <img src="imagens/logo/logo-gradiente-semfundo.png" alt="Logo JG">
+        
         <nav>
-            <a href="#quem-sou">QUEM SOU</a>
-            <a href="#portfolio">PORTFÓLIO</a>
-            <a href="#conhecimentos">CONHECIMENTOS</a>
-            <a href="#contatos">CONTATOS</a>
+            <a href="#quem-sou"><span>QUEM SOU</span></a>
+            <a href="#portfolio"><span>PORTFÓLIO</span></a>
+            <img src="imagens/logo/logo-laranja-amarelo.png" alt="Logo JG">
+            <a href="#conhecimentos"><span>SKILLS</span></a>
+            <a href="#contatos"><span>CONTATOS</span></a>
         </nav>
-        <button>CURRÍCULO</button>
     </header>
 
     <main>
-        <section id="landing-page">
-            <div id="chave-esquerda" class="container-landing-page">
+        <div class="container__wrapper">
+            <!-- The ribbon -->
+            <div class="container__ribbon">
+                <a href="">CURRÍCULO</a>
             </div>
 
-            <div id="titulo" class="container-landing-page">
+        </div>
+        <section id="landing-page">
+            <div id="chave-esquerda" class="chave-landing-page">
+            </div>
+
+            <div id="titulo">
                 <h1>JOÃO GABRIEL RIBEIRO SOUSA</h1>
                 <h2>DESENVOLVEDOR <span>FRONT-END</span></h2>
             </div>
 
-            <div id="chave-direita" class="container-landing-page">
+            <div id="chave-direita" class="chave-landing-page">
             </div>
         </section>
 
@@ -40,7 +47,9 @@
             <div class="container-fundo" id="container-quem-sou">
                 <img src="imagens/minha-foto.jpg" alt="Minha foto">
                 <div id="texto-fundo">
-                    <h3>QUEM SOU</h3>
+                    <div class="teste">
+                        <h3>QUEM SOU</h3>
+                    </div>
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab cupiditate ex itaque laborum eius odit facilis voluptatem dolorum nulla in at voluptas cumque, sint iusto, architecto tempora? Autem, fugiat fugit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste natus a dignissimos ipsa facere at nobis debitis alias? Dolorum quisquam repellendus doloremque porro nisi fugit praesentium officia numquam voluptatum voluptas.</p>
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum dicta sunt maxime enim illum deleniti quas quaerat praesentium optio velit! Laborum hic fugiat iusto at id omnis sit eligendi. Numquam.</p>
                 </div>
@@ -48,7 +57,9 @@
         </section>
 
         <section class="sessao" id="portfolio">
-            <h3>PORTFÓLIO</h3>
+            <div class="teste">
+                <h3>PORTFÓLIO</h3>
+            </div>
             <div id="container-portfolio">
                 <div>
                     <img src="" alt="">
@@ -66,8 +77,10 @@
             
             <div class="container-fundo" id="container-conhecimentos">
                 <div id="soft-skills">
-                    <h3>CONHECIMENTOS</h3>
-                    <ul><span>SOFT SKILLS</span>
+                    <div class="teste">
+                        <h3>SKILLS</h3>
+                    </div>
+                    <ul>
                         <li>Boa comunicação</li>
                         <li>Fácill aprendizado</li>
                         <li>Trabalho em equipe</li>
@@ -104,7 +117,9 @@
 
         <section class="sessao" id="contatos">
             <div id="container-contatos">
-                <h3>CONTATOS</h3>
+                <div class="teste">
+                    <h3>CONTATOS</h3>
+                </div>
                 <div id="flex-contatos">
                     <div id="container-sociais">
                         <h4>REDES SOCIAIS</h4>
