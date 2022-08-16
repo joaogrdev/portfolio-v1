@@ -1,18 +1,51 @@
-cor1: #F7F2EB ; floral white
-cor2: #00a2e8 ; azul
-cor3: #3ab9f0 ; azul-claro
-cor4: ##C25F34 ; laranja
-cor5: #ED9068 ; salmao
 
-F0D5AF - wheat
-F0BB71 - sunray
+
+black: #1b1c1e
 
 fonte-destaque: Josefin Sans
 fonte-padrão: 
 
+#F7F2EB ; floral white
+AZUL1: 5296A5;
+burlywood - D6AE7B
+F0D5AF - wheat
+WHEAT: F5DEB3
 
-img fundo quem sou
-https://unsplash.com/photos/oykbZuvajO0
+gold metallic - D6B45C
 
-img fundo conhecimentos
-https://unsplash.com/photos/BFxnx0UHVGM
+------------------------------------------------
+* 
+animação ao descer com o scroll do mouse(conteudo aparecendo, fadein, etc...);
+diminuir e mudar cor da scrollbar(neutra);
+mudar cor ao selecionar texto;
+
+
+HEADER
+mudar hover da barra de navegação;
+
+
+LANDING PAGE
+seta abaixo mostrando que se deve descer;
+
+
+QUEM SOU 
+descrição com opçoes de curto, médio, grande;
+carrosel com mais opçoes de foto;
+
+
+PORTFOLIO
+projetos esquerda e direita alternando;
+descrição ao lado da imagem de print;
+quando mouse estiver acima da imagem mudar cor do fundo;
+
+
+HABILIDADES 
+figurinha com imagem minha em desenho;
+hard skills voando sobre a minha cabeça;
+soft skills comentadas ao clicar em mim;
+
+
+CONTATOS
+papel com contatos;
+abaixo do papel tirinhas com numeros de telefone, que ao serem clicadas são arrancadas;
+ 
