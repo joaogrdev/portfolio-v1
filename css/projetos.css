@@ -1,0 +1,189 @@
+@import url(./geral.css);
+
+/*-------------------------*/
+
+.projects {
+    padding-bottom: 3rem;
+}
+
+section:not(:first-of-type) {
+    padding: 10vh 1vw;
+}
+
+
+/*container todos os projetos *****/
+
+.projects__cards {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    
+    margin-top: 5rem;
+    
+    -padding-inline: 5rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 5rem;
+}
+
+.card2, .card4 {
+    align-self: flex-end;
+}
+
+.card2 .item__print, .card4 .item__print {
+    order: 3;  
+}
+
+.card2 .item__print::before, .card4 .item__print::before {
+    -background-color: var(--base-color-dark);
+}
+
+/*container projeto individual *******/
+
+.cards__item {
+    width: 100%;
+
+    position: relative;
+
+    transition: all .3s ease-in-out;
+    
+    
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    -border: solid green;
+}
+
+/*card IMG ******************/
+
+.item__print {
+    position: relative;
+    width: 400px;
+    height: 300px;
+   
+    border-radius: 10px;
+
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    -filter: brightness(75%);
+    filter: grayscale(.7);
+}
+
+.item__print:hover {
+    filter: grayscale(.3);
+    transition: .3s;
+}
+
+.item__print::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    -background-color: var(--contrast-color);
+
+    opacity: .5;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+
+    border-radius: 10px;
+    
+}
+
+.item__print:hover::before {
+    opacity: 0;
+    transition: .5s;
+}
+
+.card1 > .item__print {
+    background-image: url("..//imagens/lospollosfritos-resize.png");
+}
+
+.card2 > .item__print {
+    background-image: url("..//imagens/capitalrock-resize.png");
+}
+
+
+/*card with informations about project */
+
+.item__information {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 3rem;
+    
+    max-width: 400px;
+}
+
+
+
+
+/* container txt project ********/
+
+
+.content__title {
+    font-family: var(--font-contrast);
+    display: flex;
+    align-items: center;
+    display: block;
+    font-size: 1.5rem;
+    color: var(--contrast-color);
+}
+
+
+
+.content__description {
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+
+    font-size: 1.2rem;
+    font-weight: normal;
+    font-family: var(--font-txt);
+    color: var(--txt-color);
+    
+}
+
+.skills__txt {
+    color: var(--base-color-dark);
+    font-size: .8rem;
+    font-family: var(--font-tech);
+    
+    margin-right: .7rem;
+}
+
+/*card icons LINKS project *******/
+
+.information__icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    
+    height: 200px;
+}
+
+.icons__line {
+    width: .1rem;
+    background-color: var(--contrast-color);
+    height: 15%;
+}
+
+.icons__img {
+    width: 25px;
+    height: 25px;
+    color: var(--base-color-light);
+}
+
+.icons__img:hover {
+    color: var(--base-color-dark);
+}
+
+.icons__img:hover {
+    transform: scale(1.3);
+}
