@@ -56,18 +56,33 @@
 }
 
 .gallery {
-    --s: 200px;
-    --g: 8px; 
+    --s: 130px;
+    --g: 6px; 
     
     display: grid;
     grid: auto-flow var(--s) / repeat(2, var(--s));
     gap: var(--g);
   }
-  .gallery > img {
+  
+  .gallery::before, .gallery::after {
+    content: "";
+    width: 60%;
+    height: 60%;
+    margin: auto;
+  }
+  .gallery::before {
+    border-left:1px solid var(--base-color-light);
+    border-top:1px solid var(--base-color-dark);
+  }
+  .gallery::after {
+    border-right:1px solid var(--base-color-dark);
+    border-bottom:1px solid var(--base-color-light);
+  }
+.gallery > img {
     width: 100%;
     aspect-ratio: 1;
     cursor: pointer;
-    filter: grayscale(.7);
+    filter: grayscale(.5);
     z-index: 0;
     transition: 0.25s, z-index 0s 0.25s;
   }
@@ -76,23 +91,29 @@
     filter: grayscale(0);
     z-index: 1;
     --_c: 50%;
-    transition: 0.4s, z-index 0s;
+    transition: .4s, z-index 0s, box-shadow .4s;
+    border-radius: 60px;
+    box-shadow: 0 0;
   }
   .gallery > img:nth-child(1) {
-    clip-path: circle(var(--_c, 55% at 70% 70%));
-    place-self: start;
+    box-shadow: 5px -5px var(--contrast-color);
+    place-self: start end;
+    border-top-right-radius: 10px;
   }
   .gallery > img:nth-child(2) {
-    clip-path: circle(var(--_c, 55% at 30% 70%));
-    place-self: start end;
+    box-shadow: -5px -5px var(--contrast-color);
+    place-self: start;
+    border-top-left-radius: 10px;
   }
   .gallery > img:nth-child(3) {
-    clip-path: circle(var(--_c, 55% at 70% 30%));
-    place-self: end start;
+    box-shadow: 5px 5px var(--base-color-light);
+    place-self: end end;
+    border-bottom-right-radius: 10px;
   }
   .gallery > img:nth-child(4) {
-    clip-path: circle(var(--_c, 55% at 30% 30%));
-    place-self: end;
+    box-shadow: -5px 5px var(--base-color-light);
+    place-self: end start;
+    border-bottom-left-radius: 10px;
   }
 
 
