@@ -11,10 +11,9 @@
     align-items: center;
     justify-content: space-around;
     flex-wrap: wrap;
-    -gap: 10rem;
+    row-gap: 5rem;
 
     margin-top: 5rem;
-    -border: solid purple
 }
 
 /*container HARD Skills */
@@ -28,7 +27,6 @@
 /*individual KEY*/
 
 .hard__key {
-    cursor: default;
     width: 100px;
     height: 100px;
 

@@ -62,6 +62,11 @@ main {
     margin: 0 auto;
 }
 
+section:not(:first-of-type) {
+    padding: 10vh 1vw;
+}
+
+
 .flex--center {
     display: flex;
     justify-content: center;
