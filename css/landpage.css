@@ -273,47 +273,147 @@
     }
 }
 
-.hamburguer {
+/* The Overlay (background) */
+.overlay {
+    height: 0%;
+    width: 100%;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+
+    background-color: var(--bg-color);
+    filter: opacity(.95);
+
+    overflow: hidden;
+    transition: .5s; 
+
+    border-bottom: 1px solid var(--shadow-color-light);
+    border-radius: 0 0 50% 50%;
+  }
+
+  /*container conteudo overlay********/
+  .overlay-content {
+    position: relative;
+    top: 15%;
+    text-align: center;
+  }
+  
+  /* links overlay *****/
+  .overlay a {
+    padding: 1rem;
+    font-family: var(--font-contrast);
+    font-size: 1.2rem;
+    color: var(--txt-color);
+
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+
+    transition: .2s;
+  }
+  .overlay a:hover, .overlay a:focus {
+    color: var(--base-color-dark);
+  }
+
+
+  /*hamburguer menu*/
+
+.container__hamburguer {
+    height: 10px;
+    width: 40px;
     display: none;
+  
+    justify-content: center;
+    align-items: center;
+
+    z-index: 2000;
 }
+  .hamburguer {
+    height: 3px;
+    width: 100%;
+    background-color: var(--txt-color);
+    border-radius: 10%;
+    position: relative;
+    transform: rotate(0deg);
+    transition: all ease .3s;
+  }
+
+  .hamburguer::before, .hamburguer::after {
+    content: "";
+    position: absolute;
+    background-color: inherit;
+    height: 100%;
+    width: 50%;
+    margin: auto;
+    border-radius: inherit;
+    transition: all ease .3s;
+  }
+
+  .hamburguer::before {
+    top: -10px;
+    left: 0;
+    transform-origin: left;
+  }
+
+  .hamburguer::after {
+    bottom: -10px;
+    right: 0;
+    transform-origin: right;
+  }
+
+  /*botão muda para estilo fechar************/
+  .open {
+    transform: rotate(135deg);
+    background-color: var(--base-color-light);
+  }
+
+  .open::before {
+    top: 0;
+    transform: translateX(100%) rotate(-90deg);
+  }
+
+  .open::after {
+    bottom: 0;
+    transform: translateX(-100%) rotate(-90deg);
+  }
+
+
 
 /*---------------------------------------------------*/
 
-/*desktop size /////////////
-@media screen and (max-width: 1100px) and (min-width: 780px) {
+
+@media screen and (max-width: 1100px) /*and (min-width: 780px)*/ {
     .txt__name {
-        font-size: 2rem;
         font-size: 3.8vw;
     }
-
     .txt__subtitle {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
 }
 
 
-/*tablet size ///////////////////
-@media screen and (max-width: 780px) and (min-width: 590px) {
+@media screen and (max-width: 780px) /*and (min-width: 590px)*/ {
     .txt__name {
-        font-size: 1.5rem;
-        font-size: 3.5vw;
+        font-size: 5vw;
     }
-
     .txt__subtitle {
-        font-size: 1rem;
+        font-size: 1.4rem;
     }
 
-    /*hamburguer manu 
+    /*sumir img landpage*/
+    .content__img {
+        display: none;
+    }
 
+    /*aparecer hamburguer menu*/
     .header__nav {
         display: none;
     }
 
-    .hamburguer {
-        display: block;
-        width: 50px;
-        height: 50px;
-        background: url(https://www.svgrepo.com/show/313139/hamburger-menu.svg);
+    .container__hamburguer {
+        display: inline-flex;
+     
     }
 
     .menu-fundo {
@@ -336,34 +436,28 @@
     }
 }
 
-/*smartphone atual size ////////
+
 @media screen and (max-width: 590px) {
     .txt__present {
         font-size: 1rem;
     }
 
     .txt__name {
-        font-size: 1.7rem;
-        max-width: 95%;
+        font-size: 1.8rem;
+        
+        width: 90%;
         text-align: center;
     }
+
     .txt__subtitle {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
 
     .landpage__sidebar {
-        left: .6rem;
+        left: .5rem;
     }
 
-    .txt__resume {
-        width: 6rem;
-        height: 2rem;
-    }
+    
 
-    .content__img {
-        display: none;
-    }
+ 
 }
-*/
-
-
