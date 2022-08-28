@@ -5,7 +5,7 @@
 .contacts__subtitle {
     color: var(--txt-color);
     font-family: var(--font-teste);
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     text-align: center;
     display: block;
     padding-top: 3rem;
@@ -107,3 +107,5 @@
 
 .menu__item:hover {
 }
+
+

@@ -11,7 +11,7 @@
     align-items: center;
     justify-content: space-around;
     flex-wrap: wrap;
-    row-gap: 5rem;
+    row-gap: 6rem;
 
     margin-top: 5rem;
 }
@@ -88,14 +88,6 @@
     opacity: 1;
 }
 
-/*************************************/
-
-.container__line {
-    height: 350px;
-    width: 2px;
-    background-color: var(--base-color-dark);
-}
-
 /************************************/
 
 .container__soft {
@@ -138,13 +130,15 @@
     position: relative;
     z-index: 999;
     padding: 0rem 2rem;
-    padding-bottom: 6rem;
+    padding-bottom: 5rem;
+    margin-left: 3rem;
+   
 
-    border-left: solid var(--bg-color) 3rem;
+    -border-left: solid var(--bg-color) 3rem;
 }
 
+/*bolha svg background*/
 .soft__svg {
-    
     width: 170%;
     height: 170%;
     
@@ -154,8 +148,10 @@
     position: absolute;
     top: -40%;
     left: -40%;
+
 }
 
+/*cada item texto soft skills*/
 .txt__item {
     font-family: var(--font-txt);
     font-size: 1.2rem;
@@ -168,21 +164,47 @@
     padding-left: 2rem;
 }
 
+/*oculos sobre livro*/
 .soft__img {
-    width: 65%;
+    width: 60%;
     position: absolute;
     bottom: -15%;
     left: 20%;
 }
 
 
-
-
-
-
 .title--over {
     text-align: center;
-    
+}
+
+
+
+
+/*----------------------------------------*/
+
+
+@media screen and (max-width: 1100px) {
+    .soft__svg {
+        width: 150%;
+        height: 150%;
+
+        top: -30%;
+        left: -30%;
+    }
+}
+
+@media screen and (max-width: 780px) {
+    .soft__svg {
+        width: 140%;
+        height: 140%;
+
+        top: -30%;
+        left: -25%;
+    }
+
+    .txt__item {
+        font-size: 1.1rem;
+    }
 }
 
 

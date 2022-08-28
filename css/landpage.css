@@ -413,51 +413,31 @@
 
     .container__hamburguer {
         display: inline-flex;
-     
-    }
-
-    .menu-fundo {
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-
-        position: absolute;
-        background-color: var(--contrast-color);
-        width: 100vw;
-        height: 100vh;
-        top: 0;
-        left: 0;
-        z-index: 1000;
-    }
-
-    .hamburguer:active .menu-fundo {
-        display: flex;
     }
 }
 
 
 @media screen and (max-width: 590px) {
+    body {
+        -overflow-x: hidden;
+    }
+    
     .txt__present {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
 
     .txt__name {
-        font-size: 1.8rem;
+        font-size: 1.9rem;
         
         width: 90%;
         text-align: center;
     }
 
     .txt__subtitle {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
     }
 
     .landpage__sidebar {
-        left: .5rem;
+        left: .6rem;
     }
-
-    
-
- 
 }
