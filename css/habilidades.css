@@ -194,6 +194,10 @@
 }
 
 @media screen and (max-width: 780px) {
+    .abilities {
+        overflow-x: hidden;
+    }
+
     .soft__svg {
         width: 140%;
         height: 140%;

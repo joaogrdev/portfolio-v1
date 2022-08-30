@@ -181,6 +181,7 @@
 .img__dev {
     width: 100%;
     min-width: 18rem;
+    z-index: 10;
 }
 
 
