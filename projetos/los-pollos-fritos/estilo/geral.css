@@ -1,0 +1,53 @@
+@charset "UTF-8";
+
+/* import fontes */
+
+@import url('https://fonts.googleapis.com/css2?family=Kavoon&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap');
+
+@font-face {
+    font-family: 'El Skeleto';
+    src: url('../fontes/El\ Skeleto.otf') format('opentype');
+}
+
+:root {
+    /*colors*/
+    --light-color: #F5EBDC;
+    --dark-color: #101010;
+    
+    --base-color: #d8bb00;
+    --contrast-color: #a00b26;
+    --detail-color-light: #66ADD9;
+    --detail-color-dark: #26488C;
+
+    /*fonts*/
+    --title-font: 'El Skeleto', sans-serif;
+    --contrast-font: 'Kavoon', sans-serif;
+    --txt-font: 'Patua One', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    margin: auto;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../imagens/pattern.svg);
+}
+
+
+.over {
+    position: relative;
+    z-index: 1000;
+}

@@ -4,229 +4,195 @@
 /*container about *************/
 
 .about {
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
 
-    row-gap: 5rem;
-    column-gap: 5rem;
-    padding: 10vh 0;
+  row-gap: 5rem;
+  column-gap: 1rem;
+  padding: 10vh 0;
 }  
 
 .about__gallery {
-    display: grid;
-    place-content: center;
+  display: grid;
+  place-content: center;
 }
 
-/*.gallery {
-   display: flex;
-   flex-grow: 1;
-   flex-shrink: 1;
-  }
- 
-.gallery > img {
-    width: 100%;
-    height: 300px;
-    aspect-ratio: 1;
-    cursor: pointer;
-    filter: grayscale(.5);
-    z-index: 0;
-    transition: 0.25s, z-index 0s 0.25s;
+.gallery {
+  display: flex;
+  width: 400px;
+  padding: 4% 2%;
+  height: 300px;
+  position: relative;
+}
 
+.gallery::before {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, var(--base-color-light), var(--contrast-color));
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
 
-  }
-  .gallery > img:hover {
-    width: 100%;
-    filter: grayscale(0);
-    z-index: 1;
-    transition: .4s, z-index 0s;
+.gallery__box {
+  flex: 1;
+  overflow: hidden;
 
-    transform: scaleX(100%);
-  }
-  .gallery > img:nth-child(1) {
-    place-self: start end;
-    width: 100px;
-  }
-  .gallery > img:nth-child(2) {
-    place-self: start;
-    width: 100px;
-  }
-  .gallery > img:nth-child(3) {
-    place-self: end end;
-    width: 100px;
-  }
-  .gallery > img:nth-child(4) {
+  margin: 0 1%;
+  line-height: 0;
+  transition: .3s linear;
+  z-index: 10;
+}
 
-    place-self: end start;
-    width: 100px;
-  }*/
-
-
-
-  .gallery {
-    display: flex;
-    width: 400px;
-    padding: 4% 2%;
-    height: 300px;
-    position: relative;
-  }
-
-  .gallery::before {
-    content: "";
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(to right, var(--base-color-light), var(--contrast-color));
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-  }
+.trap-down {
+  clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
   
-  .gallery__box {
-    flex: 1;
-    overflow: hidden;
+  position: relative;
+  top: 10px;
+}
 
-    margin: 0 1%;
-    line-height: 0;
-    transition: .5s linear;
-    z-index: 10;
-  }
-
-  .trap-down {
-    clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
-    
-    position: relative;
-    top: 10px;
-  }
-
-  .trap-up {
-    clip-path: polygon(0 0, 100% 0, 80% 100%, 20% 100%);
-   
-    position: relative;
-    bottom: 10px;
-  }
+.trap-up {
+  clip-path: polygon(0 0, 100% 0, 80% 100%, 20% 100%);
   
-  .gallery__img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; 
-    transition: .5s linear;
-  }
-  
-  .gallery__box:hover { 
-    flex: 1 1 50%; 
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-  }
-  .gallery__box:hover .gallery__img {
-    width: 100%;
-    height: 100%;
-  }
+  position: relative;
+  bottom: 10px;
+}
+
+.gallery__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  transition: .3s linear;
+}
+
+.gallery__box:hover { 
+  flex: 1 1 50%; 
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+.gallery__box:hover .gallery__img {
+  width: 100%;
+  height: 100%;
+}
 
 
 /*CONTAINER TEXT - QUEM SOU*/
 
 .about__txt {
-    width: 90%;
-    max-width: 500px;
+  width: 90%;
+  max-width: 500px;
+  
+  display: flex;
+  align-items: center;
 }
 
 .txt__bio {
-    width: 90%;
+    width: 85%;
 }
 
 .bio__parag {
-    margin-bottom: 5rem;
-    margin-top: 3rem;
-    line-height: 1.5rem;
+  margin-bottom: 6rem;
+  margin-top: 3rem;
 
-    font-family: var(--font-txt);
-    font-size: 1.2rem;
-    color: var(--txt-color);
+  padding-left: 2rem;  
+  
+  font: 1.1rem var(--font-txt);
+  color: var(--txt-color);
+
+  text-align: left;
+  height: 20px;
+  line-height: 1.5rem;
+}
+
+.bio__name, .bio__odd {
+  color: var(--contrast-color);
+  font: 1.1rem var(--font-txt);
+}
+.bio__even {
+  color: var(--base-color-dark);
+ 
+  font: 1.1rem var(--font-txt);
 }
 
 /*ajustar tamanho bio container VVVVVVVVVVV */
 
 .bio__adjust {
+  position: sticky;
 }
 
 /*TITULO ajustar bio*/
 
 .adjust__title {
-    font-family: var(--font-teste);
-    font-size: .5rem;
-    color: var(--contrast-color);
+  font: .5rem var(--font-teste);
+  color: var(--contrast-color);
 
-    letter-spacing: .1rem;
+  letter-spacing: .1rem;
 }
 
 /*CHECKBOX ajustar bio*/
 
 .adjust__checkbox {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 
-    margin-top: 1rem;
-    margin-bottom: .7rem;
+  margin-top: 1rem;
+  margin-bottom: .7rem;
 }
 
 .checkbox__input {
-    width: .9rem;
-    height: .9rem;
+  width: .9rem;
+  height: .9rem;
 
-    position: relative;
+  position: relative;
 
-    appearance: none;
-    -webkit-appearance: none;
+  appearance: none;
+  -webkit-appearance: none;
 }
 
 .checkbox__input::before {
-    content: "";
-    width: 100%;
-    height: 100%;
-    
-    position: absolute;
-    top: 0;
-    left: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  
+  position: absolute;
+  top: 0;
+  left: 0;
 
-    border-radius: 50%;
-    border: solid var(--base-color-light) 0.0625rem;
+  border-radius: 50%;
+  border: solid var(--base-color-light) 0.0625rem;
 }
 
 .checkbox__input:checked::before {
-    background: var(--base-color-light);
+  background: var(--base-color-light);
 }
 
 /*caption CURTA and LONGA adjust ******/
 
 .checkbox__input:first-of-type::after, .checkbox__input:last-of-type::after {
-    position: absolute;
-    top: 180%;
-    
-    font-family: var(--font-teste);
-    font-size: 1rem;
-    font-style: italic;
-    font-weight: lighter;
-    letter-spacing: .1rem;color: var(--txt-color);
+  position: absolute;
+  top: 180%;
+  
+
+
+  font: italic lighter 1rem var(--font-teste);
+  letter-spacing: .1rem;color: var(--txt-color);
 }
 
 .checkbox__input:first-of-type::after {
-    content: "curta";
-    left: 0;    
+  content: "curta";
+  left: 0;    
 }
 
 .checkbox__input:last-of-type::after {
-    content: "longa";
-    right: 0;  
+  content: "longa";
+  right: 0;  
 }
 
 
-/*@media screen and (max-width: 600px) {
-    .img__photos {
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 3fr 1fr;
-        grid-template-areas:
-        "photo-actual photo-actual photo-actual"
-        "photo1 photo2 photo3";
-    }
-}*/
+/*----------------------------------------*/
 
 
 @media screen and (max-width: 590px) {
