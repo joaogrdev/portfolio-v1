@@ -13,10 +13,11 @@
 
 :root {
     /*colors*/
-    --light-color: #F5EBDC;
+    --light-color: #f1ddbf;
     --dark-color: #101010;
-    
-    --base-color: #d8bb00;
+    /*212227 - black?*/
+
+    --base-color: #ccb100;
     --contrast-color: #a00b26;
     --detail-color-light: #66ADD9;
     --detail-color-dark: #26488C;
@@ -44,6 +45,8 @@ body {
     width: 100vw;
     height: 100vh;
     background-image: url(../imagens/pattern.svg);
+    
+    overflow: hidden;
 }
 
 
