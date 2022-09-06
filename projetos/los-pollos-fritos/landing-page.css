@@ -20,6 +20,8 @@ body {
 
     position: relative;
     box-shadow: 3px 0 5px rgba(0, 0, 0, 0.200);
+    background-image: url(./imagens/Poncho.svg);
+    background-size: contain;
 }
 
 .header__logo {
@@ -49,9 +51,6 @@ body {
     border-top: 2px dashed var(--detail-color-dark);
 }
 
-
-
-
 /*barra de navegação***************/
 
 .header__nav {
@@ -66,11 +65,12 @@ body {
 .nav__link {
     color: var(--contrast-color);
     font-size: 1.3rem;
-    font-family: var(--txt-font);
+ 
+    font-family: var(--contrast-font);
     padding: 1.5rem 0rem;
     width: 345px;
     display: block;
-    transition: .3s;
+    transition: .2s;
     text-align: center;
     
 }
@@ -79,6 +79,9 @@ body {
     background-color: var(--contrast-color);
     color: var(--base-color);
 }
+
+
+
 
 
 /*qr code********************/
@@ -122,13 +125,18 @@ body {
     width: 75%;
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 5vw;
+    justify-content: flex-start;
+    padding: 10%;
 
-    color: white;
+    color: var(--light-color);
     position: relative;
 
-    text-align: center;
+    background-color: var(--base-color);
+
+    background-image: url(./imagens/rainbow-vortex\ \(1\).svg);
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .content__landpage {
@@ -145,7 +153,6 @@ body {
     text-shadow: -3px 3px 0 var(--detail-color-light);
     letter-spacing: 1px;
 
-    color: white;
     position: relative;
     z-index: 100;
 }
@@ -154,8 +161,7 @@ body {
     color: var(--contrast-color);
     font-family: inherit;
     font-size: 4rem;
-    text-shadow: 0px -2px rgba(255, 255, 0, 0.4);
-
+    text-shadow: -1px -2px rgba(255, 255, 0, 0.4);
 }
 
 .mex-green,
@@ -168,50 +174,72 @@ body {
 
 
 .info__parag {
-    max-width: 500px;
+    max-width: 400px;
 
-    font-size: 1.3rem;
+    font-size: 1.5rem;
+    font-weight: 600;
     font-family: var(--txt-font);
 
-    margin-top: 3rem;
-    margin-bottom: 2rem;
+    margin-top: 3vh;
+    margin-bottom: 5vh;
 
     text-shadow: 0px 1px 1px gray;
 }
 
-.info__btn {
+.info__order {
+  
+}
+
+.landpage__order {
+    background-color: var(--light-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    bottom: -20%;
+    right: 15vw;
+    padding: 1rem;
+    transition: .5s;
+}
+
+.landpage__order:hover {
+    bottom: 0;
+}
+
+.order__link {
+    color: var(--contrast-color);
+    font-size: 1.3rem;
+    font-family: var(--contrast-font);
+}
+
+
+
+.order__btn {
     background-color: var(--light-color);
    
     color: var(--contrast-color);
     border: none;
-    border-radius: 10px;
-    -background-image: url(./icons/chicken-skull.svg);
+    -border-radius: 10px;
 
-    font-size: 1.1rem;
-    font-family: var(--txt-font);
+    font-size: 1.5rem;
+    font-family: var(--contrast-font);
+   
     padding: .5rem;
-
+    
     cursor: pointer;
     transition: .3s;
-    width: 180px;
-    margin: 0 auto;
-}
 
-.info__btn:hover {
-    background-color: var(--contrast-color);
-    color: var(--light-color);
-
+    width: fit-content;
     
 }
 
-.info__buble {
-    position: absolute;
-    top: 5%;
-    left: 28%;
+.order__btn:hover {
+    background-color: var(--light-color);
     color: var(--contrast-color);
-    opacity: .05;
-    width: 40vw;
-    min-width: 400px;
+}
+
+.order__qrcode {
+    width: 30%;
     
 }
 
@@ -220,20 +248,30 @@ body {
 
 .landpage__social {
     position: absolute;
-    bottom: 2vh;
-    right: 2vw;
+    bottom: 0;
+    right: 4vw;
+    z-index: 999;
 
 
     display: flex;
     align-items: center;
     justify-content: space-evenly;
 
-    column-gap: 1rem;
+    column-gap: .5rem;
+    padding: .5rem;
+
+    -background-color: var(--contrast-color);
+}
+
+.info__social {
+    display: flex;
+    width: 60%;
+    justify-content: space-evenly;
 }
 
 .social__icon {
     width: 3vw;
-    min-width: 20px;
+    min-width: 30px;
     color: var(--contrast-color);
     transition: .5s;
     cursor: pointer;
@@ -241,139 +279,7 @@ body {
 }
 
 .social__icon:hover {
-    color: var(--contrast-color);
-}
-
-
-
-
-/*bolha com opção de prato***********/
-
-
-/*.container__food {
-    position: absolute;
-    right: 6vw;
-    top: 0;
-
-    width: 20vw;
-    height: 20vw;
-    
-    border-radius: 0 0 30% 30%;
-
-    background-color: var(--contrast-color);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-    opacity: .9;
-
-    z-index: 9999;
-    cursor: pointer;
-    transition: .3s;
-}
-
-
-.food__buble {
-    width: 100%;
-    height: 100%;
-    background-color: var(--light-color);
-    position: absolute;
-    z-index: 9999;
-
-    border-radius: inherit;
-
-    opacity: 0;
-    transition: .5s;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    
-}
-
-.container__food:hover > .food__buble {
-    opacity: .8;
-}
-
-.buble__name {
-    font-family: var(--txt-font);
-    font-size: 2vw;
-    color: var(--contrast-color);
-}
-.buble__price {
-    font-family: var(--txt-font);
-    font-size: 4vw;
-    color: var(--base-color);
-}
-.buble__price > span {
-    font-size: 2vw;
-    font-family: inherit;
-    position: relative;
-    bottom: 25%;
-}
-
-
-.teste {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    transition: .3s;
-
-    z-index: 1000;
-
-    background-image: url(./imagens/buble-fried.png);
-    background-size: cover;
-    background-position: top center;
-}
-*/
-
-.sun-child {
-    position: relative;
-    top: 10px;
-    margin: 0 auto;
-    border-radius: 50%;
-    width: 80%;
-    height: 80%;
-}
-
-.sun1 {
-    min-width: 350px;
-    min-height: 350px;
-    position: absolute;
-    width: 40vw;
-    height: 40vw;
-
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    border-radius: 50%;
-    filter: blur(1px);
-    background: linear-gradient(to bottom, rgba(255, 255, 0, 0.05), rgba(255, 0, 0, 0.05));
-}
-
-.sun2 {
-    background: linear-gradient(to bottom, rgba(255, 255, 0, 0.075), rgba(255, 0, 0, 0.075));
-}
-
-.sun3 {
-    background: linear-gradient(to bottom, rgba(255, 255, 0, 0.1), rgba(255, 0, 0, 0.1));
-}
-
-.sun4 {
-    background: linear-gradient(to bottom, rgba(255, 255, 0, 0.125), rgba(255, 0, 0, 0.125));
-}
-
-.sun5 {
-    background: linear-gradient(to bottom, rgba(255, 255, 0, 0.15), rgba(255, 0, 0, 0.1));
-}
-
-.sun6 {
-    background: linear-gradient(to bottom, rgba(255, 255, 0, 0.4), rgba(255, 0, 0, 0.2));
+    color: var(--detail-color-light);
 }
 
 /*sticks**************************/
@@ -423,23 +329,14 @@ body {
 
 .stick6 {
     top: 0%;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 15%;
+    -transform: translateX(-50%);
 }
 
 
-
-
-
-
-.svg-teste {
+.teste-fried {
     position: absolute;
-    top: 0;
- 
-}
-
-.svg-under {
-    position: absolute;
-    bottom: 0;
-
+    right: 0;
+    top: 10%;
+    width: 40vw;
 }

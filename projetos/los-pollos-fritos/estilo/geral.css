@@ -6,6 +6,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Calistoga&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,400;0,600;0,700;1,200;1,600;1,700;1,900&display=swap');
+
 @font-face {
     font-family: 'El Skeleto';
     src: url('../fontes/El\ Skeleto.otf') format('opentype');
@@ -24,9 +28,12 @@
 
     /*fonts*/
     --title-font: 'El Skeleto', sans-serif;
-    --contrast-font: 'Kavoon', sans-serif;
-    --txt-font: 'Patua One', sans-serif;
+    --contrast-font: 'Calistoga', serif;
+    --txt-font: 'Source Sans Pro', sans-serif;
+
 }
+
+
 
 * {
     margin: 0;
@@ -44,7 +51,6 @@ body {
     margin: auto;
     width: 100vw;
     height: 100vh;
-    background-image: url(../imagens/pattern.svg);
     
     overflow: hidden;
 }
