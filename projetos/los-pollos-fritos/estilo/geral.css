@@ -49,12 +49,22 @@ a {
 
 body {
     margin: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
     width: 100vw;
     height: 100vh;
-    
-    overflow: hidden;
 }
 
+
+section {
+    height: 100vh;
+    padding: 10%;
+
+    background-image: url(../imagens/bg-content.svg);
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
 .over {
     position: relative;

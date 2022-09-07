@@ -8,8 +8,12 @@ body {
 
 .header {
     height: 100vh;
-    width: 25%;
+    width: 25vw;
 
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -18,10 +22,12 @@ body {
     padding: 2rem;
     background-color: var(--light-color);
 
-    position: relative;
+   
     box-shadow: 3px 0 5px rgba(0, 0, 0, 0.200);
-    background-image: url(./imagens/Poncho.svg);
+    background-image: url(../imagens/Poncho.svg);
     background-size: contain;
+
+    
 }
 
 .header__logo {
@@ -121,25 +127,19 @@ body {
 
 /*conteudo************************/
 
-.content {
+main.content {
     width: 75%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 10%;
+    margin-left: 25vw;
 
-    color: var(--light-color);
     position: relative;
-
-    background-color: var(--base-color);
-
-    background-image: url(./imagens/rainbow-vortex\ \(1\).svg);
-    background-position: top left;
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
 .content__landpage {
+    color: var(--light-color);
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 .landpage__info {
@@ -196,14 +196,16 @@ body {
     flex-direction: column;
     align-items: center;
     position: absolute;
-    bottom: -20%;
-    right: 15vw;
+    bottom: 0%;
+    right: 30vw;
     padding: 1rem;
     transition: .5s;
+    height: 50px;
+    overflow: hidden;
 }
 
 .landpage__order:hover {
-    bottom: 0;
+    height: 180px;
 }
 
 .order__link {
@@ -213,35 +215,57 @@ body {
 }
 
 
+.landpage__coupons {
+    background-color: var(--contrast-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: .8rem;
+    position: absolute;
+    bottom: 0%;
+    right: 15vw;
 
-.order__btn {
-    background-color: var(--light-color);
-   
-    color: var(--contrast-color);
-    border: none;
-    -border-radius: 10px;
+    
+    transition: .5s;
+    height: 50px;
+    overflow: hidden;
+}
 
-    font-size: 1.5rem;
+.landpage__coupons:hover {
+    height: 210px;
+}
+
+.coupons__link {
+    color: var(--light-color);
+    font-size: 1.3rem;
     font-family: var(--contrast-font);
-   
-    padding: .5rem;
-    
-    cursor: pointer;
-    transition: .3s;
-
-    width: fit-content;
-    
 }
 
-.order__btn:hover {
+.coupons__item {
+    display: block;
+    font-family: var(--txt-font);
+    font-size: 1rem;
+    color: var(--light-color);
+    font-weight: 600;
+    padding: 1rem;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+
+    border-top: 1px solid var(--light-color);
+}
+
+.coupons__item:hover {
     background-color: var(--light-color);
     color: var(--contrast-color);
 }
 
-.order__qrcode {
-    width: 30%;
-    
+.coupons__item:nth-of-type(1) {
+    margin-top: .8rem;
 }
+
+
+
 
 
 /*social icons*********************/
@@ -282,57 +306,7 @@ body {
     color: var(--detail-color-light);
 }
 
-/*sticks**************************/
-
-
-.content-stick {
-    position: absolute;
-    width: 10vw;
-    opacity: .5; 
-    z-index: 9999;
-}
-
-.content-stick::before {
-    content: "";
-    width: 100%;
-    height: 100;
-    position: absolute;
-    background-color: white;
-    border-radius: 50%;
-}
-
-.stick1 {
-    top: 20%;
-    left: 10%;
-}
-
-.stick2 {
-    top: 60%;
-    left: 10%;
-}
-
-.stick3 {
-    top: 20%;
-    left: 10%;
-}
-
-.stick4 {
-    top: 20%;
-    left: 80%;
-    transform: rotate(30deg);
-}
-
-.stick5 {
-    top: 60%;
-    left: 80%;
-}
-
-.stick6 {
-    top: 0%;
-    left: 15%;
-    -transform: translateX(-50%);
-}
-
+/*imagem balde landing-page *************/
 
 .teste-fried {
     position: absolute;
