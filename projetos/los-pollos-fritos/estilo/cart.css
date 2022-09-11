@@ -1,0 +1,145 @@
+@import url(./geral.css);
+
+/********************************/
+
+.content__cart {
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 1fr;
+    gap: 1vw;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "requests requests total"
+      "delivery payment btns";
+}
+
+.cart__box {
+    background-color: #f1ddbf50;
+    display: flex;
+    flex-direction: column;
+    padding: 5% 10%;
+    border-radius: 10px;
+
+    background-color: #f1ddbf90;
+}
+
+
+
+.box__title, .delivery__option {
+    font-size: 1.3rem;
+    font-family: var(--contrast-font);
+    color: var(--contrast-color);
+}
+
+.box__line {
+    margin-top: 1vh;
+    margin-bottom: 2vh;
+    width: 100%;
+    opacity: .2;
+    border-bottom: 1px dashed var(--detail-color-dark);
+}
+
+  /*sessao pedidos feitos****************/
+.cart__requests { 
+    grid-area: requests; 
+}
+
+/*sessao valor total*********************/
+.cart__total { 
+    grid-area: total; 
+    align-items: center;
+    justify-content: center;
+    row-gap: 1rem;
+}
+
+.total__value {
+    font-size: 3rem;
+    font-family: var(--contrast-font);
+    color: var(--contrast-color);
+}
+.total__value-small {
+    font-size: 1.5rem;
+    font-family: inherit;
+    position: relative;
+    top: -20%;
+}
+
+
+
+
+
+
+
+
+/*sessao tipo de entrega******************/
+.cart__delivery { 
+    grid-area: delivery; 
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 2rem;
+}
+
+.delivery__option {
+    padding: 1vh .5vw;
+    cursor: pointer;
+}
+
+.delivery__option:hover {
+    background-color: var(--base-color);
+}
+/*sessao tipo de pagamento****************/
+.cart__payment { 
+    grid-area: payment; 
+    align-items: center;
+    justify-content: center;
+    row-gap: 1rem;
+}
+
+.payment__container {
+    background-color: var(--light-color);
+    color: var(--contrast-color);
+    border: none;
+    width: min-content;
+    -text-align: center;
+    padding: .5rem;
+}
+
+.payment__container:hover {
+}
+
+option:hover {
+    box-shadow: 0 0 10px 100px #1882A8 inset;
+    color: red;
+}
+
+/*botoes para finalizar**********************/
+.cart__btns {
+    align-items: center;
+    justify-content: center;
+    row-gap: 2vh;
+    background-color: transparent;
+}
+
+.btns__item {
+    border: none;
+    font-size: .9rem;
+    font-family: var(--contrast-font);
+    padding: 1rem 0;
+    width: 100%;
+}
+.btn1 {
+    background-color: var(--detail-color-dark);
+    color: var(--light-color);
+}
+.btn2 {
+    background-color: var(--light-color);
+    color: var(--contrast-color);
+}
+.btn3 {
+    background-color: var(--contrast-color);
+    color: var(--light-color);
+}

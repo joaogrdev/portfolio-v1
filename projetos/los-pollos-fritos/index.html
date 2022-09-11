@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="estilo/geral.css">
     <link rel="stylesheet" href="estilo/landing-page.css">
     <link rel="stylesheet" href="estilo/menu.css">
+    <link rel="stylesheet" href="estilo/cart.css">
 </head>
 <body>
     <header class="header">
@@ -22,7 +23,7 @@
         <nav class="header__nav"> <!--NAVBAR-->
             <a href="#home" class="nav__link">HOME</a>
             <a href="#cardapio" class="nav__link">CARDÁPIO</a>
-            <a href="#" class="nav__link">CARRINHO</a>
+            <a href="#carrinho" class="nav__link">CARRINHO</a>
         </nav>
 
         <div class="line-divider"></div>
@@ -179,6 +180,41 @@
 
         </section>
         
+        <section id="carrinho" class="content__cart">
+
+            <div class="cart__box cart__requests"><!--PEDIDOS FEITOS-->
+                <span class="box__title">Pedidos</span>
+                <div class="box__line"></div>
+                <div></div>
+            </div>
+
+            <div class="cart__box cart__total"><!--VALOR TOTAL-->
+                <span class="box__title">Valor final</span>
+                <span class="total__value"><span class="total__value-small">R$</span>0</span>
+            </div>
+
+            <div class="cart__box cart__delivery"><!--ENTREGA-->
+                <span class="box__title"><span class="delivery__option">Entrega</span> <br> ou <br> <span class="delivery__option">Retirada</span></span>
+            </div>
+
+            <div class="cart__box cart__payment"><!--PAGAMENTO-->
+                <span class="box__title">Tipo de Pagamento</span>
+                <select class="payment__container" name="payment" id="payment-type">
+                    <option value=""></option>
+                    <option value="dinheiro">Dinheiro</option>
+                    <option value="credito">Crédito</option>
+                    <option value="debito">Débito</option>
+                    <option value="pix">Pix</option>
+                    <option value="vale">Vale</option>
+                </select>
+            </div>
+
+            <div class="cart__box cart__btns"><!--BOTOES FINAIS-->
+                <button class="btns__item btn1">FINALIZAR COMPRA</button>
+                <button class="btns__item btn2">COMPRAR MAIS</button>
+                <button class="btns__item btn3">LIMPAR CARRINHO</button>
+            </div>
+        </section>
     </main>
 
     <script src="js/landing-page.js"></script>
