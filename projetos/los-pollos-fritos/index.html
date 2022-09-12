@@ -23,7 +23,7 @@
         <nav class="header__nav"> <!--NAVBAR-->
             <a href="#home" class="nav__link">HOME</a>
             <a href="#cardapio" class="nav__link">CARDÁPIO</a>
-            <a href="#carrinho" class="nav__link">CARRINHO</a>
+            <a href="#carrinho" class="nav__link">CARRINHO <span class="link__requests">()</span></a>
         </nav>
 
         <div class="line-divider"></div>
@@ -71,11 +71,9 @@
 
             <article class="menu__container">
 
-                <div class="menu__item item1">
-                    <div class="item__card">
-                        <div class="card__front">
-      
-                        </div>
+
+                    <div class="container__card card1">
+                        <div class="card__front"></div>
                         <div class="card__back">
                             <div class="back__info">
                                 <span class="info__product">Pollo à Moda</span>
@@ -83,16 +81,14 @@
                                 <span class="info__price"><span class="info__price smaller">R$</span>19,90</span>
                             </div>
                             <div class="back__request">
-                                <button class="request__btn">+</button>
-                                <span class="request__value">0</span>
-                                <button class="request__btn">-</button>
+                                <button class="request__btn btn1 plus">+</button>
+                                <span class="request__value btn1 value1">0</span>
+                                <button class="request__btn btn1 minus">-</button>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="menu__item item2">
-                    <div class="item__card">
+                    <div class="container__card card2">
                         <div class="card__front"></div>
                         <div class="card__back">
                             <div class="back__info">
@@ -101,15 +97,13 @@
                                 <span class="info__price"><span class="info__price smaller">R$</span>39,90</span>
                             </div>
                             <div class="back__request">
-                                <button class="request__btn">+</button>
-                                <span class="request__value">0</span>
-                                <button class="request__btn">-</button>
+                                <button class="request__btn btn2 plus">+</button>
+                                <span class="request__value btn2 value2">0</span>
+                                <button class="request__btn btn2 minus">-</button>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="menu__item item3">
-                    <div class="item__card">
+                    <div class="container__card card3">
                         <div class="card__front"></div>
                         <div class="card__back">
                             <div class="back__info">
@@ -118,15 +112,13 @@
                                 <span class="info__price"><span class="info__price smaller">R$</span>49,90</span>
                             </div>
                             <div class="back__request">
-                                <button class="request__btn">+</button>
-                                <span class="request__value">0</span>
-                                <button class="request__btn">-</button>
+                                <button class="request__btn btn3 plus">+</button>
+                                <span class="request__value btn3 value3">0</span>
+                                <button class="request__btn btn3 minus">-</button>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="menu__item item4">
-                    <div class="item__card">
+                    <div class="container__card card4">
                         <div class="card__front"></div>
                         <div class="card__back">
                             <div class="back__info">
@@ -135,15 +127,13 @@
                                 <span class="info__price"><span class="info__price smaller">R$</span>15,90</span>
                             </div>
                             <div class="back__request">
-                                <button class="request__btn">+</button>
-                                <span class="request__value">0</span>
-                                <button class="request__btn">-</button>
+                                <button class="request__btn btn4 plus">+</button>
+                                <span class="request__value btn4 value4">0</span>
+                                <button class="request__btn btn4 minus">-</button>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="menu__item item5">
-                    <div class="item__card">
+                    <div class="container__card card5">
                         <div class="card__front"></div>
                         <div class="card__back">
                             <div class="back__info">
@@ -152,15 +142,13 @@
                                 <span class="info__price"><span class="info__price smaller">R$</span>24,90</span>
                             </div>
                             <div class="back__request">
-                                <button class="request__btn">+</button>
-                                <span class="request__value">0</span>
-                                <button class="request__btn">-</button>
+                                <button class="request__btn btn5 plus">+</button>
+                                <span class="request__value btn5 value5">0</span>
+                                <button class="request__btn btn5 minus">-</button>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="menu__item item6">
-                    <div class="item__card">
+                    <div class="container__card card6">
                         <div class="card__front"></div>
                         <div class="card__back">
                             <div class="back__info">
@@ -169,13 +157,12 @@
                                 <span class="info__price"><span class="info__price smaller">R$</span>9,90</span>
                             </div>
                             <div class="back__request">
-                                <button class="request__btn">+</button>
-                                <span class="request__value">0</span>
-                                <button class="request__btn">-</button>
+                                <button class="request__btn btn6 plus">+</button>
+                                <span class="request__value btn6 value6">0</span>
+                                <button class="request__btn btn6 minus">-</button>
                             </div>
                         </div>
                     </div>
-                </div>
             </article>
 
         </section>
@@ -190,7 +177,10 @@
 
             <div class="cart__box cart__total"><!--VALOR TOTAL-->
                 <span class="box__title">Valor final</span>
-                <span class="total__value"><span class="total__value-small">R$</span>0</span>
+                <span class="total__value">
+                    <span class="total__value-small">R$</span>
+                    <span class="total__value-number">0</span>
+                </span>
             </div>
 
             <div class="cart__box cart__delivery"><!--ENTREGA-->
@@ -210,13 +200,15 @@
             </div>
 
             <div class="cart__box cart__btns"><!--BOTOES FINAIS-->
-                <button class="btns__item btn1">FINALIZAR COMPRA</button>
-                <button class="btns__item btn2">COMPRAR MAIS</button>
-                <button class="btns__item btn3">LIMPAR CARRINHO</button>
+                <button class="btns__item btn-final">FINALIZAR COMPRA</button>
+                <button class="btns__item btn-more">COMPRAR MAIS</button>
+                <button class="btns__item btn-clear">LIMPAR CARRINHO</button>
             </div>
         </section>
     </main>
 
     <script src="js/landing-page.js"></script>
+    <script type="module" src="js/menu.js"></script>
+    <script type="module" src="js/cart.js"></script>
 </body>
 </html>

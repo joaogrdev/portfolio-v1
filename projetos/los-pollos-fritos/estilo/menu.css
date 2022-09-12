@@ -29,7 +29,7 @@
     width: 100%;
 }
 
-.item__card {
+.container__card {
     position: relative;
     width: 100%;
     height: 100%;
@@ -39,7 +39,7 @@
     
   }
 
-  .menu__item:hover .item__card {
+  .container__card:hover {
     transform: rotateY(180deg);
   }
 
@@ -51,22 +51,22 @@
     
   }
 
-  .item1 .card__front {
+  .card1 .card__front {
     background-image: url(../imagens/item1.jpg);
   }
-  .item2 .card__front {
+  .card2 .card__front {
     background-image: url(../imagens/item2.jpg);
   }
-.item3 .card__front {
+.card3 .card__front {
     background-image: url(../imagens/item3.jpg);
 }
-.item4 .card__front {
+.card4 .card__front {
     background-image: url(../imagens/item4.jpg);
 }
-.item5 .card__front {
+.card5 .card__front {
     background-image: url(../imagens/item5.jpg);
 }
-.item6 .card__front {
+.card6 .card__front {
     background-image: url(../imagens/item6.jpg);
 }
 

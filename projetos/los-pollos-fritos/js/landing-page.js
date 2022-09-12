@@ -15,3 +15,4 @@ btn.addEventListener('click', function() {
         minmax = "max";
     }
 })
+

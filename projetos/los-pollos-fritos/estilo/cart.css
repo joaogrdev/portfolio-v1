@@ -56,7 +56,7 @@
 }
 
 .total__value {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-family: var(--contrast-font);
     color: var(--contrast-color);
 }
@@ -66,12 +66,10 @@
     position: relative;
     top: -20%;
 }
-
-
-
-
-
-
+.total__value-number {
+    font-family: inherit;
+    font-size: inherit;
+}
 
 
 /*sessao tipo de entrega******************/
@@ -130,16 +128,17 @@ option:hover {
     font-family: var(--contrast-font);
     padding: 1rem 0;
     width: 100%;
+    border-radius: 10px;
 }
-.btn1 {
+.btn-final {
     background-color: var(--detail-color-dark);
     color: var(--light-color);
 }
-.btn2 {
+.btn-more {
     background-color: var(--light-color);
     color: var(--contrast-color);
 }
-.btn3 {
+.btn-clear {
     background-color: var(--contrast-color);
     color: var(--light-color);
 }
