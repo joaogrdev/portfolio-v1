@@ -47,6 +47,12 @@
     grid-area: requests; 
 }
 
+.requests__parag {
+    font-family: var(--txt-font);
+    color: var(--dark-color);
+    font-size: 1.3rem;
+}
+
 /*sessao valor total*********************/
 .cart__total { 
     grid-area: total; 
@@ -177,4 +183,5 @@
 .btn-more {
     background-color: var(--detail-color-dark);
     color: var(--base-color);
+    text-align: center;
 }

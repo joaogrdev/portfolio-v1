@@ -3,26 +3,61 @@ let minusBtns = document.querySelectorAll(".minus") //todos os btns menos
 const valuesTxt = document.querySelectorAll(".request__value"); //todos as qtds de pedidos
 
 
-let countEachCard = [0, 0, 0, 0, 0, 0]; //qtd de cada produto
-const pricesEachCard = [19.90, 39.90, 49.90, 15.90, 24.90, 9.90]; //preços de cada produtos
-
+const products = {
+    0: {
+        productNumbers: 0,
+        productName: "Pollo à Moda",
+        productPrice: 19.90,
+        partialPrice: 0
+    },
+    1: {
+        productNumbers: 0,
+        productName: "Asa Crocante",
+        productPrice: 39.90,
+        partialPrice: 0
+    },
+    2: {
+        productNumbers: 0,
+        productName: "Coxa Família",
+        productPrice: 49.90,
+        partialPrice: 0
+    },
+    3: {
+        productNumbers: 0,
+        productName: "Pollo Balde",
+        productPrice: 15.90,
+        partialPrice: 0
+    },
+    4: {
+        productNumbers: 0,
+        productName: "Pollo Burg",
+        productPrice: 24.90,
+        partialPrice: 0
+    },
+    5: {
+        productNumbers: 0,
+        productName: "Nuggets",
+        productPrice: 9.90,
+        partialPrice: 0
+    }
+}
 
 /************************************************* */
-let spansValue = []; //array com spans
-valuesTxt.forEach(function(valueTxt) { //pega todos os spans de qtd de cada produto, e joga na array
+
+valuesTxt.forEach(function(valueTxt) { //pega todos os spans de qtd de cada produto, e joga no objeto PRODUCTS
     var l = 0;
-    do {
-        spansValue.push(valuesTxt[l])
+     do {
+        products[l].spansValue = valuesTxt[l];
         l++;
-    } while(spansValue.length < 7);
+    } while(l < 6);
 })
 
 /************************************************* */
 
-function sumRequests() { //coloca items no carrinho e mostra no navbar
+function getNumberProducts() { //coloca items no carrinho e mostra no navbar
     let totalRequests = 0;
-    for(var i = 0; i < countEachCard.length; i++) {
-        totalRequests += countEachCard[i];
+    for(var i = 0; i < 6; i++) {
+        totalRequests += products[i].productNumbers;
     }
 
     let linkRequests = document.querySelector(".link__requests");
@@ -36,16 +71,23 @@ function sumRequests() { //coloca items no carrinho e mostra no navbar
 
 /*************************************************** */
 
-let partialPrice = [0, 0, 0, 0, 0, 0];
 function getFinalPrice() { //pega o preço final de todos os produtos no carrinho
     let totalPrice = 0;
-    for(var j = 0; j < partialPrice.length; j++) {
-        totalPrice += partialPrice[j];
+    for(var j = 0; j < 6; j++) {
+        totalPrice += products[j].partialPrice;
     }
 
     let roundPrice = totalPrice.toFixed(2).replace(".", ",");
     let totalValue = document.querySelector(".total__value-number");
     totalValue.textContent = roundPrice;
+}
+
+/********************************************************** */
+
+function setValues(index) {
+    
+    index.spansValue.textContent = index.productNumbers;
+    index.partialPrice = index.productNumbers * index.productPrice;
 }
 
 /*********************************************************** */
@@ -54,16 +96,13 @@ plusBtns.forEach(function(plusBtn) {
     for(var k=0; k < plusBtns.length; k++) { //setando index para cada btn
         plusBtns[k].index = k;
       }
-      
     plusBtn.addEventListener("click", function(e) {
-        let indexP = e.currentTarget.index;
-
-        countEachCard[indexP]++;
-        spansValue[indexP].textContent = countEachCard[indexP];
-        partialPrice[indexP] = countEachCard[indexP] * pricesEachCard[indexP];
-
-        sumRequests();
+        let actual = products[e.currentTarget.index];
+        actual.productNumbers++;
+        setValues(actual);
+        getNumberProducts();
         getFinalPrice();
+        setTxtRequestsMade(actual);
     })
 })
 
@@ -72,76 +111,31 @@ minusBtns.forEach(function(minusBtn) {
         minusBtns[m].index = m;
       }
     minusBtn.addEventListener("click", function(e) {
-        let indexM = e.currentTarget.index;
-
-        countEachCard[indexM]--;
-        spansValue[indexM].textContent = countEachCard[indexM];
-        partialPrice[indexM] = countEachCard[indexM] * pricesEachCard[indexM];
-
-        sumRequests();
+        let actual = products[e.currentTarget.index];
+        if(actual.productNumbers > 0) {
+            actual.productNumbers--;
+            setValues(actual);
+        }
+        getNumberProducts();
         getFinalPrice();
+        setTxtRequestsMade(actual);
     })
 })
 
+/*********************************************************** */
 
+function setTxtRequestsMade(index) {
+    let requestsMade = document.querySelector(".requests-made");
 
-
-
-
-
-
-
-
-
-
-
-/*if(target.contains("btn1")) {
-            counters[0]++;
-            value1.textContent = counters[0];
-            partialPrice[0] = counters[0] * prices[0];
-        } else if(target.contains("btn2")) {
-            counters[1]++;
-            value2.textContent = counters[1];
-            partialPrice[1] = counters[1] * prices[1];
-        } else if(target.contains("btn3")) {
-            counters[2]++;
-            value3.textContent = counters[2];
-            partialPrice[2] = counters[2] * prices[2];
-        } else if(target.contains("btn4")) {
-            counters[3]++;
-            value4.textContent = counters[3];
-            partialPrice[3] = counters[3] * prices[3];
-        } else if(target.contains("btn5")) {
-            counters[4]++;
-            value5.textContent = counters[4];
-            partialPrice[4] = counters[4] * prices[4];
-        } else {
-            counters[5]++;
-            value6.textContent = counters[5];
-            partialPrice[5] = counters[5] * prices[5];
+    requestsMade.textContent = ""; //limpa paragrafos antigos e atualiza com novos valores
+    
+    for(var n = 0; n < 6; n++) { //loop por todas as qtds de pedidos para ver se há pedido, e criar parag com ele
+        if(products[n].productNumbers > 0) {
+            let txtTag = document.createElement("p");
+            txtTag.setAttribute("class", "requests__parag");
+            let txtTagContent = document.createTextNode(products[n].productNumbers + "x " + products[n].productName + " " + products[n].partialPrice.toFixed(2).replace(".", ","));
+            txtTag.appendChild(txtTagContent);
+            requestsMade.appendChild(txtTag);
         }
-if(target.contains("btn1") && counters[0] > 0) {
-            counters[0]--;
-            value1.textContent = counters[0];
-            partialPrice[0] = counters[0] * prices[0];
-        } else if(target.contains("btn2") && counters[1] > 0) {
-            counters[1]--;
-            value2.textContent = counters[1];
-            partialPrice[1] = counters[1] * prices[1];
-        } else if(target.contains("btn3") && counters[2] > 0) {
-            counters[2]--;
-            value3.textContent = counters[2];
-            partialPrice[2] = counters[2] * prices[2];
-        } else if(target.contains("btn4") && counters[3] > 0) {
-            counters[3]--;
-            value4.textContent = counters[3];
-            partialPrice[3] = counters[3] * prices[3];
-        } else if(target.contains("btn5") && counters[4] > 0) {
-            counters[4]--;
-            value5.textContent = counters[4];
-            partialPrice[4] = counters[4] * prices[4];
-        } else if(counters[5] > 0){
-            counters[5]--;
-            value6.textContent = counters[5];
-            partialPrice[5] = counters[5] * prices[5];
-        }*/
+    }
+};
