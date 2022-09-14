@@ -109,9 +109,48 @@
 .payment__container:hover {
 }
 
-option:hover {
-    box-shadow: 0 0 10px 100px #1882A8 inset;
-    color: red;
+
+.payment__coupon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.coupon__input {
+    background-color: var(--light-color);
+    border: none;
+    width: 50%;
+    outline: 1px solid var(--light-color);
+    background-color: transparent;
+    padding: .4rem;
+    border-radius: 10px 0 0 10px;
+
+    color: var(--contrast-color);
+    font-family: var(--txt-font);
+    font-size: 1rem;
+}
+
+.coupon__input::placeholder {
+    color: var(--contrast-color);
+    font-family: var(--txt-font);
+    font-size: .7rem;
+    opacity: .5;
+}
+
+.coupon__btn {
+    border: none;
+    padding: .5rem;
+    background-color: var(--light-color);
+    color: var(--contrast-color);
+    font-size: .8rem;
+    font-family: var(--contrast-font);
+    border-radius: 0 10px 10px 0;
+    cursor: pointer;
+}
+
+.coupon__btn:hover {
+    background-color: var(--contrast-color);
+    color: var(--light-color);
 }
 
 /*botoes para finalizar**********************/
@@ -129,16 +168,13 @@ option:hover {
     padding: 1rem 0;
     width: 100%;
     border-radius: 10px;
+    cursor: pointer;
 }
 .btn-final {
-    background-color: var(--detail-color-dark);
-    color: var(--light-color);
+    background-color: var(--base-color);
+    color: var(--detail-color-dark);
 }
 .btn-more {
-    background-color: var(--light-color);
-    color: var(--contrast-color);
-}
-.btn-clear {
-    background-color: var(--contrast-color);
-    color: var(--light-color);
+    background-color: var(--detail-color-dark);
+    color: var(--base-color);
 }

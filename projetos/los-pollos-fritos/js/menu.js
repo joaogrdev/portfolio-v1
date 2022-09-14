@@ -1,18 +1,28 @@
-let plusBtns = document.querySelectorAll(".plus")
-let minusBtns = document.querySelectorAll(".minus")
-let value1 = document.querySelector(".value1");
-let value2 = document.querySelector(".value2");
-let value3 = document.querySelector(".value3");
-let value4 = document.querySelector(".value4");
-let value5 = document.querySelector(".value5");
-let value6 = document.querySelector(".value6");
+let plusBtns = document.querySelectorAll(".plus") //todos os btns de mais
+let minusBtns = document.querySelectorAll(".minus") //todos os btns menos
+const valuesTxt = document.querySelectorAll(".request__value"); //todos as qtds de pedidos
 
 
-let counters = [0, 0, 0, 0, 0, 0];
-function sumRequests() {
+let countEachCard = [0, 0, 0, 0, 0, 0]; //qtd de cada produto
+const pricesEachCard = [19.90, 39.90, 49.90, 15.90, 24.90, 9.90]; //preços de cada produtos
+
+
+/************************************************* */
+let spansValue = []; //array com spans
+valuesTxt.forEach(function(valueTxt) { //pega todos os spans de qtd de cada produto, e joga na array
+    var l = 0;
+    do {
+        spansValue.push(valuesTxt[l])
+        l++;
+    } while(spansValue.length < 7);
+})
+
+/************************************************* */
+
+function sumRequests() { //coloca items no carrinho e mostra no navbar
     let totalRequests = 0;
-    for(var i = 0; i < counters.length; i++) {
-        totalRequests += counters[i];
+    for(var i = 0; i < countEachCard.length; i++) {
+        totalRequests += countEachCard[i];
     }
 
     let linkRequests = document.querySelector(".link__requests");
@@ -24,14 +34,10 @@ function sumRequests() {
     }
 }
 
-
-
-const prices = [19.90, 39.90, 49.90, 15.90, 24.90, 9.90]; //preços de cada produtos
-
-/*pega o preço final de todos os produtos no carrinho*****************/
+/*************************************************** */
 
 let partialPrice = [0, 0, 0, 0, 0, 0];
-function getFinalPrice() {
+function getFinalPrice() { //pega o preço final de todos os produtos no carrinho
     let totalPrice = 0;
     for(var j = 0; j < partialPrice.length; j++) {
         totalPrice += partialPrice[j];
@@ -45,10 +51,51 @@ function getFinalPrice() {
 /*********************************************************** */
 
 plusBtns.forEach(function(plusBtn) {
+    for(var k=0; k < plusBtns.length; k++) { //setando index para cada btn
+        plusBtns[k].index = k;
+      }
+      
     plusBtn.addEventListener("click", function(e) {
-        let target = e.currentTarget.classList; //pega as classes do botão clicado
+        let indexP = e.currentTarget.index;
 
-        if(target.contains("btn1")) {
+        countEachCard[indexP]++;
+        spansValue[indexP].textContent = countEachCard[indexP];
+        partialPrice[indexP] = countEachCard[indexP] * pricesEachCard[indexP];
+
+        sumRequests();
+        getFinalPrice();
+    })
+})
+
+minusBtns.forEach(function(minusBtn) {
+    for(var m=0; m < minusBtns.length; m++) { //setando index para cada btn
+        minusBtns[m].index = m;
+      }
+    minusBtn.addEventListener("click", function(e) {
+        let indexM = e.currentTarget.index;
+
+        countEachCard[indexM]--;
+        spansValue[indexM].textContent = countEachCard[indexM];
+        partialPrice[indexM] = countEachCard[indexM] * pricesEachCard[indexM];
+
+        sumRequests();
+        getFinalPrice();
+    })
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*if(target.contains("btn1")) {
             counters[0]++;
             value1.textContent = counters[0];
             partialPrice[0] = counters[0] * prices[0];
@@ -73,16 +120,7 @@ plusBtns.forEach(function(plusBtn) {
             value6.textContent = counters[5];
             partialPrice[5] = counters[5] * prices[5];
         }
-        sumRequests();
-        getFinalPrice();
-    })
-})
-
-
-minusBtns.forEach(function(minusBtn) {
-    minusBtn.addEventListener("click", function(e) {
-        let target = e.currentTarget.classList;
-        if(target.contains("btn1") && counters[0] > 0) {
+if(target.contains("btn1") && counters[0] > 0) {
             counters[0]--;
             value1.textContent = counters[0];
             partialPrice[0] = counters[0] * prices[0];
@@ -106,8 +144,4 @@ minusBtns.forEach(function(minusBtn) {
             counters[5]--;
             value6.textContent = counters[5];
             partialPrice[5] = counters[5] * prices[5];
-        }
-        sumRequests();
-        getFinalPrice();
-    })
-})
+        }*/

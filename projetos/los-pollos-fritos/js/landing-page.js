@@ -16,3 +16,17 @@ btn.addEventListener('click', function() {
     }
 })
 
+
+
+const coupons = document.querySelectorAll(".coupons__item");
+
+coupons.forEach(function(coupon) {
+    coupon.addEventListener("click", function(e) {
+        let target = e.currentTarget.classList;
+        if(target.contains("coupon1")) {
+            alert("Cupom resgatado! Use o código POLLO10 no carrinho.")
+        } else {
+            alert("Cupom resgatado! Use o código FRITO20 no carrinho.")
+        }
+    })
+})

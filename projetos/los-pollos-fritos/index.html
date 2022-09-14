@@ -61,9 +61,8 @@
 
             <div class="landpage__coupons">
                 <a class="coupons__link" href="#">CUPONS</a>
-                <span class="coupons__item">PRIMEIRA COMPRA</span>
-                <span class="coupons__item">FRETE GRÁTIS</span>
-                <span class="coupons__item">COMPRE 1, LEVE 2</span>
+                <span class="coupons__item coupon1">10% OFF<br><span class="item__detail">em compras acima de R$25</span></span>
+                <span class="coupons__item coupon2">20% OFF<br><span class="item__detail">em compras acima de R$50</span></span>
             </div>
         </section>
 
@@ -197,12 +196,17 @@
                     <option value="pix">Pix</option>
                     <option value="vale">Vale</option>
                 </select>
+                
+                <div class="payment__coupon">
+                    <input class="coupon__input" type="text" placeholder="Código de cupom">
+                    <button class="coupon__btn">Adicionar</button>
+                </div>
+                
             </div>
 
             <div class="cart__box cart__btns"><!--BOTOES FINAIS-->
                 <button class="btns__item btn-final">FINALIZAR COMPRA</button>
                 <button class="btns__item btn-more">COMPRAR MAIS</button>
-                <button class="btns__item btn-clear">LIMPAR CARRINHO</button>
             </div>
         </section>
     </main>

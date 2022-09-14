@@ -250,7 +250,7 @@ main.content {
 .coupons__item {
     display: block;
     font-family: var(--txt-font);
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: var(--light-color);
     font-weight: 600;
     padding: 1rem;
@@ -268,6 +268,11 @@ main.content {
 
 .coupons__item:nth-of-type(1) {
     margin-top: .8rem;
+}
+
+.item__detail {
+    font-family: inherit;
+    font-size: .7em;
 }
 
 
