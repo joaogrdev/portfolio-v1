@@ -72,9 +72,9 @@
     background-image: url("..//imagens/todolist.jpeg");
 }
 
-.card3 > .item__print {
-    background-image: url("..//imagens/coming-soon.jpg");
-}
+/* .card3 > .item__print {
+    background-image: url("..//imagens/advanced-todo-list.jpeg");
+} */
 
 .item__print:hover {
     filter: grayscale(.3);
