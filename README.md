@@ -1,6 +1,8 @@
 # 🌟 Meu Portfólio
 
-Este é meu primeiro projeto pessoal, criado no final de 2021, no início da minha jornada como desenvolvedor. Serve como uma vitrine clara da minha evolução técnica e estética ao longo do tempo.
+Este é meu primeiro projeto pessoal, criado em 2022, no início da minha jornada como desenvolvedor. Serve como uma vitrine clara da minha evolução técnica e estética ao longo do tempo.
+
+<a href="https://joaogrdev.github.io/portfolio-v1" target="_blank">Portfólio - 2022</a>
 
 ## 🚀 Tecnologias utilizadas
 
