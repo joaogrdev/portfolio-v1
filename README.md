@@ -25,7 +25,7 @@ Apresenta as seguintes sessões:
 ## 📦 Instalação
 
 1. Clone o repositório:
-git clone https://github.com/joaogrdev/portfolio.git
+git clone https://github.com/joaogrdev/portfolio-v1.git
    
 2. Abra o arquivo index.html no navegador para visualizar.
 
